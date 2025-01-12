@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valetine?</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button.yes {
+            background-color: #f77f00;
+            color: white;
+        }
+
+        button.no {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        .message {
+            margin-top: 40px;
+            font-size: 2rem;
+            font-weight: bold;
+            animation: fadeIn 5s ease-in-out;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .image-container {
+            margin-top: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .image-container img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .links {
+            margin-top: 30px;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #f77f00;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+            text-align: center;
+        }
+
+        .links a:hover {
+            color: #d35400;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Please Be My Valentine?</h1>
+        <p>I've been waiting for the perfect moment to ask...</p>
+
+        <div class="image-container">
+            <img src="IMG_8203.JPG" alt="A romantic picture" />
+        </div>
+
+        <div class="buttons">
+            <button class="yes">Yes</button>
+            <button class="no">No</button>
+        </div>
+
+        <div class="message"></div>
+
+        <div class="links">
+            <a href="https://open.spotify.com/playlist/1fNW4h5O7wC5Ki3NUhXlAR?si=88bac1322e2b43db" target="_blank">Playlist</a>
+        </div>
+    </div>
+
+    <script>
+        const yesButton = document.querySelector('.yes');
+        const noButton = document.querySelector('.no');
+        const message = document.querySelector('.message');
+
+        yesButton.addEventListener('click', () => {
+            message.textContent = "You just made me the happiest person alive! ❤️";
+            message.style.opacity = 1;
+        });
+
+        noButton.addEventListener('mouseover', () => {
+            const randomX = Math.floor(Math.random() * 200) - 100;
+            const randomY = Math.floor(Math.random() * 200) - 100;
+            noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        });
+    </script>
+</body>
+</html>
